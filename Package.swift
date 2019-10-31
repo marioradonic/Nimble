@@ -15,13 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "Nimble", 
-            dependencies: {
-                #if os(macOS)
-                return ["CwlPreconditionTesting", "CwlPosixPreconditionTesting"]
-                #else
-                return []
-                #endif
-            }()
+            dependencies: ["CwlPreconditionTesting", "CwlPosixPreconditionTesting"]
         ),
         .testTarget(
             name: "NimbleTests", 
