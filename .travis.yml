@@ -1,6 +1,7 @@
 branches:
   only:
     - master
+    - test-latest-swift-development-snapshot
 
 language: generic
 jobs:
@@ -31,10 +32,10 @@ jobs:
     #   name: SwiftPM / Linux / Swift 5.3
     #   env:
     #     - SWIFT_VERSION=5.3
-    # - <<: *swiftpm_linux
-    #   name: SwiftPM / Linux / Swift Development
-    #   env:
-    #     - SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2020-02-21-a
+    - <<: *swiftpm_linux
+      name: SwiftPM / Linux / Swift Development
+      env:
+        - SWIFT_VERSION=DEVELOPMENT-SNAPSHOT-2020-02-21-a
 install: true
 script:
   - ./test $TYPE
